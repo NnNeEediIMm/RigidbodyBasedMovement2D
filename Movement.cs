@@ -4,7 +4,6 @@ using UnityEngine;
 /*Rigidbody 2D Movement
  made by NnNeEediIMm
  Enjoy!! */
-
 public class Movement : MonoBehaviour
 {
     protected Rigidbody2D rb;
@@ -20,6 +19,7 @@ public class Movement : MonoBehaviour
     private GameObject groundCheck;
     [Header("Gravity")]
     public LayerMask whatIsGround;
+    public float groundRadius = 0.22f;
     float endOfYScale;
     bool isGrounded = false;
     public int gravityScale = 20;
@@ -129,7 +129,7 @@ public class Movement : MonoBehaviour
         groundCheck.transform.position = new Vector2(transform.position.x, transform.position.y - endOfYScale);
 
         //is grounded system
-        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, 0.00011f, whatIsGround);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, groundRadius, whatIsGround);
     }
 
     /*Other mechanics*/
