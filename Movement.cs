@@ -4,6 +4,7 @@ using UnityEngine;
 /*Rigidbody 2D Movement
  made by NnNeEediIMm
  Enjoy!! */
+
 public class Movement : MonoBehaviour
 {
     protected Rigidbody2D rb;
